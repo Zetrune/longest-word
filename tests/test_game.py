@@ -31,3 +31,8 @@ class TestGame(unittest.TestCase):
       new_game = Game()
       new_game.grid = list('KWIENFUQW') # Force the grid to a test case:
       self.assertIs(new_game.is_valid('FEUNQ'), False)
+
+    def test_no_is_valid(self):
+      new_game = Game()
+      new_game.grid = list('NOERATHJD') # Force the grid to a test case:
+      self.assertIs(new_game.is_valid('NO'), True)
