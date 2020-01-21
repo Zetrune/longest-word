@@ -16,6 +16,7 @@ class Game():
             return False
         if is_word_in_dictionary(word) is False:
             return False
+        word = word.upper()
         for letter in word:
             if letter not in self.grid:
                 return False
@@ -26,4 +27,5 @@ def is_word_in_dictionary(word):
     if api_request.status_code != 200:
         return False
     response = api_request.json()
+    print(response)
     return response["found"]
